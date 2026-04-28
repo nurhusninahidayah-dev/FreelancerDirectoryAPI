@@ -1,0 +1,21 @@
+﻿CREATE TABLE Freelancers (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Username NVARCHAR(100) NOT NULL UNIQUE,
+    Email NVARCHAR(200) NOT NULL UNIQUE,
+    PhoneNumber NVARCHAR(20) NULL,
+    IsArchived BIT NOT NULL DEFAULT 0
+);
+
+CREATE TABLE SkillSets (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    FreelancerId INT NOT NULL,
+    Skill NVARCHAR(100) NOT NULL,
+    CONSTRAINT FK_SkillSets_Freelancer FOREIGN KEY (FreelancerId) REFERENCES Freelancers(Id) ON DELETE CASCADE
+);
+
+CREATE TABLE Hobbies (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    FreelancerId INT NOT NULL,
+    HobbyName NVARCHAR(100) NOT NULL,
+    CONSTRAINT FK_Hobbies_Freelancer FOREIGN KEY (FreelancerId) REFERENCES Freelancers(Id) ON DELETE CASCADE
+);

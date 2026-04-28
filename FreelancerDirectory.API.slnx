@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="FreelancerDirectory.API/FreelancerDirectory.API.csproj" />
+  <Project Path="FreelancerDirectory.Application/FreelancerDirectory.Application.csproj" />
+  <Project Path="FreelancerDirectory.Domain/FreelancerDirectory.Domain.csproj" />
+  <Project Path="FreelancerDirectory.Infrastructure/FreelancerDirectory.Infrastructure.csproj" />
+</Solution>
